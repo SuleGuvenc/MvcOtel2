@@ -1,0 +1,12 @@
+﻿{
+  "ConnectionStrings": {
+    "katalog": "sServer=DESKTOP-9AU11AR\\MSSQLSERVER02;Database=Otel;Trusted_Connection=true;TrustServerCertificate=true"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}

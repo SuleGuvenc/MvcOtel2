@@ -1,0 +1,48 @@
+﻿@model IList<Room> 
+
+
+
+	<h1>Rooms</h1>
+    	<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">RoomNo</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+@for (int i = 0; i < Model.Count; i++)
+{
+
+  
+    <tr>
+      <th scope="row">@Model[i].Id</th>
+      <td>@Model[i].RoomNo</td>
+      <td>@Model[i].Description</td>
+      <td>@Model[i].Price $</td>
+    </tr>
+   
+    
+	
+
+}
+  </tbody>
+</table>
+
+@*(var room in Model)
+	{
+		
+		<div class="card">
+			<div class="card-header">
+			<h3>@room.RoomNo </h3>
+		</div>
+		<div class="card-body">
+			<p>@room.Description</p>
+		</div>
+		<div class="card-footer">
+			<p> @room.Price $</p>
+		</div>
+		</div>
+	}*@

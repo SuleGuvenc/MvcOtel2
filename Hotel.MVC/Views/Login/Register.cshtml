@@ -1,0 +1,55 @@
+﻿@model UserCreateDTO
+
+<form asp-action="Register" asp-controller="Login" method="post">
+   
+
+
+
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+        
+        <label class="form-label" asp-for="UserName">User Name</label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+
+   @* <!-- Username input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="registerUsername" class="form-control" />
+        <label class="form-label" for="registerUsername">Soyad</label>
+    </div>*@
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" asp-for="Email">Mail</label>
+        <input asp-for="Email" class="form-control" />
+        
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        
+        <label class="form-label" asp-for="Password">Şifre</label>
+        <input asp-for="Password" class="form-control" />
+    </div>
+
+    <!-- Repeat Password input -->
+    <div class="form-outline mb-4">
+        
+        <label class="form-label" asp-for="RePassword">Tekrar şifre</label>
+        <input asp-for="RePassword" class="form-control" />
+    </div>
+
+    <!-- Checkbox -->
+    <div class="form-check d-flex justify-content-center mb-4">
+        <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+               aria-describedby="registerCheckHelpText" />
+        <label class="form-check-label" for="registerCheck">
+            I have read and agree to the terms
+        </label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-3">Katıl</button>
+
+</form>
+

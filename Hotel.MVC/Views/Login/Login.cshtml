@@ -1,0 +1,41 @@
+﻿@model LoginDTO
+
+<partial name="_Header" />
+ <form asp-action="Login" asp-controller="Login" method="post">
+
+
+    <div class="form-outline mb-4">
+
+		<label class="form-label" asp-for="Email">Email</label>   
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" asp-for="Password">Password</label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Katıl</button>
+
+    <!-- Register buttons -->
+    <div class="text-center">
+        <p>Üye değil misin? <p/>
+		<button asp-controller="Login" asp-action="Register" type="submit" class="btn btn-primary btn-block mb-4">Register
+
+        </button>
+       
+  
+        
+ 
+    </div>
+  
+
+</form>
+

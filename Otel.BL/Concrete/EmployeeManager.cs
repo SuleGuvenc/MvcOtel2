@@ -12,8 +12,6 @@ namespace Otel.BL.Concrete
 {
     public class EmployeeManager : ManagerBase<Employee>, IEmployeeManager
     {
-        public EmployeeManager(IBaseRepository<Employee> repository) : base(repository)
-        {
-        }
+        
     }
 }

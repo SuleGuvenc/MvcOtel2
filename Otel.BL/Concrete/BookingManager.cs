@@ -15,9 +15,7 @@ namespace Otel.BL.Concrete
 {
     public class BookingManager : ManagerBase<Booking>, IBookingManager
     {
-        public BookingManager(IBaseRepository<Booking> repository) : base(repository)
-        {
-        }
+       
 
 
        

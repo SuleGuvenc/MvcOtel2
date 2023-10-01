@@ -2,6 +2,7 @@
 using Otel.DAL.Repository.Abstract;
 using System.Linq.Expressions;
 using Otel.Entitiy.Abstarct;
+using Otel.DAL.Repository.Concrete;
 
 namespace Otel.BL.Concrete
 {
@@ -9,10 +10,10 @@ namespace Otel.BL.Concrete
     {
         private readonly IBaseRepository<T> repository;
 
-        public ManagerBase(IBaseRepository<T> repository)
+        public ManagerBase()
         {
 
-            this.repository = repository;
+            this.repository = new BaseRepository<T>();
         }
 
         public async Task<int> InsertAsync(T entity)

@@ -78,24 +78,24 @@ public class Program
         ////*******AutoMapper*****************///
 
         builder.Services.AddAutoMapper(typeof(MvcOtel));
+        builder.Services.AddOtelServices();
+       
+
+        //builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+        //builder.Services.AddScoped<IRoomManager, RoomManager>();
 
 
-        //builder.Services.AddOtelServices();
-        builder.Services.AddScoped<IRoomRepository, RoomRepository>();
-        builder.Services.AddScoped<IRoomManager, RoomManager>();
+        //builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+        //builder.Services.AddScoped<ICustomerManager, CustomerManager>();
 
+        //builder.Services.AddScoped<IHotelRepository, HotelRepository>();
+        //builder.Services.AddScoped<IHotelManager, HotelManager>();
 
-        builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-        builder.Services.AddScoped<ICustomerManager, CustomerManager>();
-
-        builder.Services.AddScoped<IHotelRepository, HotelRepository>();
-        builder.Services.AddScoped<IHotelManager, HotelManager>();
-
-        builder.Services.AddScoped<IBookingRepository, BookingRepository>();
-        builder.Services.AddScoped<IBookingManager, BookingManager>();
+        //builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+        //builder.Services.AddScoped<IBookingManager, BookingManager>();
 
         var app = builder.Build();
-        //
+        
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {

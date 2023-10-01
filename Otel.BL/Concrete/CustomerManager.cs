@@ -12,9 +12,7 @@ namespace Otel.BL.Concrete
 {
     public class CustomerManager : ManagerBase<Customer>, ICustomerManager
     {
-        public CustomerManager(IBaseRepository<Customer> repository) : base(repository)
-        {
-        }
+
 
        
     }

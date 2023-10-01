@@ -13,7 +13,7 @@
             <th scope="col">CheckOut</th>
             <th scope="col">RoomId</th>
             <th scope="col">AppUserId</th>
-            <th scope="col">AppUserId</th>
+            <th scope="col">Düzenleme</th>
         </tr>
     </thead>
     <tbody>
@@ -23,11 +23,11 @@
                 <th scope="row">@Model[i].Id</th>
                 <td>@Model[i].CheckIn</td>
                 <td>@Model[i].CheckOut</td>
-                <td>@Model[i].RoomId $</td>
+                <td>@Model[i].RoomId</td>
                 <td>@Model[i].AppUserId</td>
                 <td>
-                    <button >Düzenle</button>
-                    <button >Sil</button>
+                    <a class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" asp-action="Edit" asp-controller="Booking" asp-area="AdminArea" asp-route-id="@Model[i].Id">Düzenle</a>
+                    <a class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" asp-action="Edit" asp-controller="Booking" asp-area="AdminArea" asp-route-id="@Model[i].Id">Sil</a>
                 </td>
             </tr>
         }

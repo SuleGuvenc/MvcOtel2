@@ -24,6 +24,9 @@ namespace Hotel.MVC.Extensions
             services.AddScoped<IBookingRepository, BookingRepository>();
             services.AddScoped<IBookingManager, BookingManager>();   
 
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();  
+            services.AddScoped<IEmployeeManager, EmployeeManager>();    
+
            
            
 

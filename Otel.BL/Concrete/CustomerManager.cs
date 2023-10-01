@@ -12,24 +12,11 @@ namespace Otel.BL.Concrete
 {
     public class CustomerManager : ManagerBase<Customer>, ICustomerManager
     {
+        public CustomerManager(IBaseRepository<Customer> repository) : base(repository)
+        {
+        }
+
        
-
-        public async Task<Customer?> Login(string email, string password)
-        {
-
-            var customer=await base.GetBy(p => p. Email== email && p.Password == password);
-            if (customer != null)
-            {
-                return customer;
-            }
-            return null;
-
-        }
-
-        public Task<bool> Logout(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 

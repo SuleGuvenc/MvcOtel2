@@ -5,10 +5,8 @@ using Otel.DAL.Repository.Concrete;
 
 namespace Hotel.MVC.Extensions
 {
-    public  static class AddOtelService
+    public  static class AddHotelService
     {
-
-       
         public static IServiceCollection AddOtelServices(this IServiceCollection services)
         {
             services.AddScoped<IRoomRepository, RoomRepository>();
@@ -22,10 +20,10 @@ namespace Hotel.MVC.Extensions
             services.AddScoped<IHotelManager, HotelManager>();
 
             services.AddScoped<IBookingRepository, BookingRepository>();
-            services.AddScoped<IBookingManager, BookingManager>();   
+            services.AddScoped<IBookingManager, BookingManager>();
 
-           
-           
+
+
 
 
             return services;

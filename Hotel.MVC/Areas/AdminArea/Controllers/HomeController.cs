@@ -25,11 +25,7 @@ namespace Hotel.MVC.Areas.AdminArea.Controllers
 
             return View(booking);
         }
-        //test view
-        public IActionResult Test()
-        {
-            return View();
-        }
 
+       
     }
 }

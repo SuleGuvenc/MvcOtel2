@@ -1,0 +1,36 @@
+﻿@model IList<Booking>
+﻿@{
+    Layout = "_Layout";
+}
+
+
+<h1>Bookings</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">CheckIn</th>
+            <th scope="col">CheckOut</th>
+            <th scope="col">RoomId</th>
+            <th scope="col">AppUserId</th>
+            <th scope="col">AppUserId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <th scope="row">@Model[i].Id</th>
+                <td>@Model[i].CheckIn</td>
+                <td>@Model[i].CheckOut</td>
+                <td>@Model[i].RoomId $</td>
+                <td>@Model[i].AppUserId</td>
+                <td>
+                    <button >Düzenle</button>
+                    <button >Sil</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

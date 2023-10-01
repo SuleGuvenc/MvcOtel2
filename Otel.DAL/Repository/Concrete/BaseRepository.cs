@@ -14,7 +14,7 @@ namespace Otel.DAL.Repository.Concrete
 {
     public  class BaseRepository<T>:IBaseRepository<T>where T : BaseEntity
     {
-        public  SqlDbContext dbContext{ get; set; }
+        public SqlDbContext dbContext{ get; set; }
         public BaseRepository()
         {
             this.dbContext = new SqlDbContext();
@@ -36,19 +36,15 @@ namespace Otel.DAL.Repository.Concrete
             dbContext.Set<T>().Remove(entity);
             return await dbContext.SaveChangesAsync();
         }
+        public async Task<T?> GetBy(Expression<Func<T, bool>> filter)
+        {
+            return await dbContext.Set<T>().Where(filter).FirstOrDefaultAsync();
+        }
 
         public async Task<T?> GetByIdAsync(int id)
         {
             return await dbContext.Set<T>().FindAsync(id);
         }
-        public async Task<T?> GetBy(Expression<Func<T, bool>> filter)
-        {
-
-
-            return await dbContext.Set<T>().Where(filter).FirstOrDefaultAsync();
-        }
-
-
         public async Task<ICollection<T>> GetAllAsync()
         {
             return await dbContext.Set<T>().ToListAsync();
@@ -70,11 +66,7 @@ namespace Otel.DAL.Repository.Concrete
             {
                 query = dbContext.Set<T>().Where(filter);
             }
-            else
-            {
-                query = dbContext.Set<T>();
-            }
-
+            query = dbContext.Set<T>();
 
             return include.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
         }

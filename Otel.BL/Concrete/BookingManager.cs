@@ -15,16 +15,12 @@ namespace Otel.BL.Concrete
 {
     public class BookingManager : ManagerBase<Booking>, IBookingManager
     {
-
-
-        //Task<bool> CheckInVarMi(TimeSpan checkin);
-        //Task<bool> CheckOutVarMi(TimeSpan checkout);
-        public Task<Booking> GetBokings(string id)
+        public BookingManager(IBaseRepository<Booking> repository) : base(repository)
         {
-            var bookings = base.repository.dbContext.Booking.Include(x => x.AppUserId == id);
-
-            return bookings;
         }
+
+
+       
     }
 }
     

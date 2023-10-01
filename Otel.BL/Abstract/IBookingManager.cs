@@ -11,6 +11,6 @@ namespace Otel.BL.Abstract
      public interface IBookingManager:IManagerBase<Booking>
     {
 
-        Task<Booking> GetBokings(string id);
+        
     }
 }

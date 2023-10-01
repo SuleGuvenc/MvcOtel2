@@ -1,65 +1,47 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using Otel.BL.Abstract;
+﻿using Otel.BL.Abstract;
 using Otel.DAL.Repository.Abstract;
 using System.Linq.Expressions;
-
-using Otel.BL.Abstract;
-using Otel.DAL.Repository.Abstract;
 using Otel.Entitiy.Abstarct;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using Otel.Entitiy.Concrete;
-using Otel.DAL.Repository.Concrete;
 
 namespace Otel.BL.Concrete
 {
-    public class ManagerBase<T> : IManagerBase<T> where T :BaseEntity
+    public class ManagerBase<T> : IManagerBase<T> where T : BaseEntity
     {
+        private readonly IBaseRepository<T> repository;
 
-        public  IBaseRepository<T> repository;
-        private IBookingRepository dbContext;
-        private IBaseRepository<Customer> repository1;
-        private IBaseRepository<Hotel> repository2;
-        private IBaseRepository<Employee> repository3;
-
-
-        // IOC Container icerisinde var olan dbcontext nesnesi buraya injet edilecek
-        public ManagerBase()
+        public ManagerBase(IBaseRepository<T> repository)
         {
 
-            this.repository = new BaseRepository<T>();
+            this.repository = repository;
         }
 
-        public ManagerBase(IBookingRepository dbContext)
+        public async Task<int> InsertAsync(T entity)
         {
-            this.dbContext = dbContext;
+            // Set metodu dbContex icerisndeki gelen T tipi ne ise ona konumlanir.
+            return await repository.InsertAsync(entity);
         }
 
-        public ManagerBase(IBaseRepository<Customer> repository1)
+        public async Task<int> UpdateAsync(T entity)
         {
-            this.repository1 = repository1;
+            return await repository.UpdateAsync(entity);
         }
 
-        public ManagerBase(IBaseRepository<Hotel> repository2)
+        public async Task<int> DeleteAsync(T entity)
         {
-            this.repository2 = repository2;
+            return await repository.DeleteAsync(entity);
         }
 
-        public ManagerBase(IBaseRepository<Employee> repository3)
+        public async Task<T?> GetBy(Expression<Func<T, bool>> filter)
         {
-            this.repository3 = repository3;
+            return await repository.GetBy(filter);
+
         }
 
-        public virtual async Task<int> DeleteAsync(T entity)
+        public async Task<T?> GetByIdAsync(int id)
         {
-            return await repository.DeleteAsync(entity);    
+            return await repository.GetByIdAsync(id);
         }
-
-        public  async Task<ICollection<T>> GetAllAsync()
+        public async Task<ICollection<T>> GetAllAsync()
         {
             return await repository.GetAllAsync();
         }
@@ -67,39 +49,13 @@ namespace Otel.BL.Concrete
         public async Task<ICollection<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null)
         {
             return await repository.GetAllAsync(filter);
-		}
-
-        public async Task<T?> GetByIdAsync(int id)
-        {
-            return await repository.GetByIdAsync(id);
-        }
-        public async Task<T?> GetBy(Expression<Func<T, bool>> filter)
-        {
-
-
-            return await repository.GetBy(filter);
 
         }
-        public async  Task<IQueryable<T>> GetAllInclude(Expression<Func<T, bool>>? filter = null, params Expression<Func<T, object>>[] include)
+
+        public async Task<IQueryable<T>> GetAllInclude(Expression<Func<T, bool>>? filter = null, params Expression<Func<T, object>>[] include)
         {
             return await repository.GetAllInclude(filter, include);
-        }
 
-      
-
-       
-
-
-
-        
-        public virtual async Task<int> InsertAsync(T entity)
-        {
-            return await repository.InsertAsync(entity);
-        }
-
-        public  virtual async Task<int> UpdateAsync(T entity)
-        {
-            return await repository.UpdateAsync(entity);
         }
     }
 }

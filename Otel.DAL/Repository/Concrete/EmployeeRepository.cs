@@ -10,46 +10,8 @@ using System.Threading.Tasks;
 
 namespace Otel.DAL.Repository.Concrete
 {
-    public class EmployeeRepository : BaseConfig<Employee>, IEmployeeRepository
+    public class EmployeeRepository : BaseRepository<Employee>, IEmployeeRepository
     {
-        public Task<int> DeleteAsync(Employee entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ICollection<Employee>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ICollection<Employee>> GetAllAsync(Expression<Func<Employee, bool>>? filter = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IQueryable<Employee>> GetAllInclude(Expression<Func<Employee, bool>>? filter = null, params Expression<Func<Employee, object>>[] include)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Employee?> GetBy(Expression<Func<Employee, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Employee?> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> InsertAsync(Employee entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> UpdateAsync(Employee entity)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

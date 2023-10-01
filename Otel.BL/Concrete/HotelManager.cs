@@ -12,6 +12,8 @@ namespace Otel.BL.Concrete
 {
     public class HotelManager : ManagerBase<Hotel>, IHotelManager
     {
-       
+        public HotelManager(IBaseRepository<Hotel> repository) : base(repository)
+        {
+        }
     }
 }

@@ -12,7 +12,9 @@ namespace Otel.BL.Concrete
 {
     public class RoomManager : ManagerBase<Room>, IRoomManager
     {
-     
+        public RoomManager(IBaseRepository<Room> repository) : base(repository)
+        {
+        }
     }
 
 

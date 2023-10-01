@@ -3,7 +3,11 @@ using Hotel.MVC.AutoMapper;
 using Hotel.MVC.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Otel.BL.Abstract;
+using Otel.BL.Concrete;
 using Otel.DAL.Contents;
+using Otel.DAL.Repository.Abstract;
+using Otel.DAL.Repository.Concrete;
 using Otel.Entity.Authentication;
 
 namespace Hotel.MVC;
@@ -51,7 +55,7 @@ public class Program
 
         #endregion
 
-        builder.Services.AddOtelServices();
+        
         ///***Cookie***************************////
 
         builder.Services.ConfigureApplicationCookie(options =>
@@ -74,6 +78,21 @@ public class Program
         ////*******AutoMapper*****************///
 
         builder.Services.AddAutoMapper(typeof(MvcOtel));
+
+
+        //builder.Services.AddOtelServices();
+        builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+        builder.Services.AddScoped<IRoomManager, RoomManager>();
+
+
+        builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+        builder.Services.AddScoped<ICustomerManager, CustomerManager>();
+
+        builder.Services.AddScoped<IHotelRepository, HotelRepository>();
+        builder.Services.AddScoped<IHotelManager, HotelManager>();
+
+        builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+        builder.Services.AddScoped<IBookingManager, BookingManager>();
 
         var app = builder.Build();
         //

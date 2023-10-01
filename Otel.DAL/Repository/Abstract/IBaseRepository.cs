@@ -11,7 +11,7 @@ namespace Otel.DAL.Repository.Abstract
 {
   public  interface IBaseRepository<T>where T : BaseEntity
     {
-        public SqlDbContext dbContext { get; set; } 
+      
 
         Task<int> InsertAsync(T entity);
         Task<int> UpdateAsync(T entity);

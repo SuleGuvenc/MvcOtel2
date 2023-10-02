@@ -5,7 +5,7 @@
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
 
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
 
         public  string AppUserId { get; set; }
 

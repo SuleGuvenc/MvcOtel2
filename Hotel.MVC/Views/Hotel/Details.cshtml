@@ -1,0 +1,47 @@
+﻿@model Hotel
+
+
+@{
+	Layout = "_Layout";
+}
+
+<h1>Otel Sayfası</h1>
+<div class="container text-center">	
+		<div id="carouselExampleFade" class="carousel slide carousel-fade">
+			<div class="carousel-inner">
+			@for (int i = 0; i < ViewBag.Rooms.Count; i++)
+			{
+
+							<div class="carousel-item active">
+				<img src="@ViewBag.Rooms[i].Description" class="d-block w-100" alt="...">
+				</div>
+			}
+				
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	<div class="row">
+		@for (int i = 0; i < ViewBag.Rooms.Count; i++)
+		{
+			<div class="card m-2" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">@ViewBag.Rooms[i].RoomType</h5>
+					<p class="card-text">@ViewBag.Rooms[i].RoomNo</p>
+                    <p class="card-text">@ViewBag.Rooms[i].Price $</p>
+
+					<a asp-action="Rezerve" asp-controller="Booking" asp-route-id="@ViewBag.Rooms[i].Id" class="btn btn-primary">Rezerve Edin</a>
+				</div>
+			</div>
+
+		}
+		
+	</div>
+</div>
+

@@ -1,0 +1,32 @@
+﻿@using Hotel.MVC.DTO.Booking;
+@model BookingCreateDTO;
+
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h3>Rezerve Edin</h3>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+    <div class="card-body">
+        <form asp-action="Rezerve" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="@Model.CheckIn" class="form-label">Giriş Tarihi</label>
+                <input asp-for="@Model.CheckIn" class="form-control">
+                <span asp-validation-for="@Model.CheckIn" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.CheckOut" class="form-label">Çıkış Tarihi</label>
+                <input asp-for="@Model.CheckOut" class="form-control">
+                <span asp-validation-for="@Model.CheckOut" class="text-danger"></span>
+            </div>        
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Rezerve Et</button>
+                <button type="reset" class="btn btn-success">Tarihi Sıfırla</button>
+            </div>        
+        </form>
+    </div>
+</div>

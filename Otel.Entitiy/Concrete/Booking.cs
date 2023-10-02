@@ -24,5 +24,8 @@ namespace Otel.Entitiy.Concrete
         //Rezervasyon ve Hotel arasındaki bire çok ilişki
         public int HotelId { get; set; }
         public Hotel? Hotel { get; set; }
+
+        //Toplam fiyat 
+        // public int ToplamFiyat {get;set;}
     }
 }

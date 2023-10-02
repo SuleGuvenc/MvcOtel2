@@ -134,6 +134,7 @@
     <Folder Include="Areas\AdminArea\Data\" />
     <Folder Include="Areas\AdminArea\Models\" />
     <Folder Include="Areas\MembersArea\Models\" />
+    <Folder Include="Views\Room\Shared\" />
     <Folder Include="wwwroot\NewFolder\" />
   </ItemGroup>
 

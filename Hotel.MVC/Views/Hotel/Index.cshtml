@@ -1,0 +1,27 @@
+﻿@model IList<Hotel>
+
+
+@{
+	Layout = "_Layout";
+}
+
+<h1>Oteller</h1>
+<div class="container text-center">
+	<div class="row">
+
+	@for (int i = 0; i < Model.Count; i++)
+	{
+			<div class="card m-2" style="width: 18rem;">
+			<img src="~/img/room-2.jpg" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">@Model[i].HotelName</h5>
+				<p class="card-text">@Model[i].HotelCity</p>
+					<a asp-action="Details" asp-controller="Hotel" asp-route-id="@Model[i].Id" class="btn btn-primary">Detay</a>
+				@*<p class="card-text">@Model[i].</p>*@
+			</div>
+		</div>
+
+	}
+	</div>
+</div>
+

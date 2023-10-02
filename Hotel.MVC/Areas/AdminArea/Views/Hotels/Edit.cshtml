@@ -1,0 +1,64 @@
+﻿@model Otel.Entitiy.Concrete.Hotel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+@{
+    Layout = "_Layout";
+}
+
+<h1>Edit</h1>
+
+<h4>Hotel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label"></label>
+                <input asp-for="Adres" class="form-control" />
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostaCode" class="control-label"></label>
+                <input asp-for="PostaCode" class="form-control" />
+                <span asp-validation-for="PostaCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelName" class="control-label"></label>
+                <input asp-for="HotelName" class="form-control" />
+                <span asp-validation-for="HotelName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelCity" class="control-label"></label>
+                <input asp-for="HotelCity" class="form-control" />
+                <span asp-validation-for="HotelCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelCountry" class="control-label"></label>
+                <input asp-for="HotelCountry" class="form-control" />
+                <span asp-validation-for="HotelCountry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gsm" class="control-label"></label>
+                <input asp-for="Gsm" class="form-control" />
+                <span asp-validation-for="Gsm" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CreateDate" class="control-label"></label>
+                <input asp-for="CreateDate" class="form-control" />
+                <span asp-validation-for="CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -18,10 +18,10 @@ namespace Otel.DAL.Contents
         public DbSet<Room> Rooms { get; set; }
 
         public DbSet<Hotel> Hotels { get; set; }
-       
-       
 
-       
+        public DbSet<Menu> Menuler { get; set; }
+
+
         public SqlDbContext()
         {
 

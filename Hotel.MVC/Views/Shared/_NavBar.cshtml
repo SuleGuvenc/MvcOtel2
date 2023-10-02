@@ -1,8 +1,7 @@
 ﻿<a asp-action="index" asp-controller="home" class="nav-item nav-link active">Anasayfa</a>
 
-@if (!User.Identity.IsAuthenticated 
-@*&& kullanıcı adminse*@
-){
+@if (User.Identity.IsAuthenticated)
+{
 <a asp-action="index" asp-controller="home" asp-area="AdminArea" class="nav-item nav-link" nav-link">Admin Panel</a>
 	<a asp-action="index" asp-controller="hotel" class="nav-item nav-link" nav-link">Oteller</a>
 	<a asp-action="Logout" asp-controller="Login" class="nav-item nav-link">@User.Identity.Name Logout</a>

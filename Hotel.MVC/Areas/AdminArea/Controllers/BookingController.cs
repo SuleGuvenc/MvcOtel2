@@ -14,7 +14,7 @@ using System.Data;
 namespace Hotel.MVC.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,User")]
     public class BookingController : Controller
     {
         

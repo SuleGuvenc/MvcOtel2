@@ -12,6 +12,6 @@ namespace Otel.Entity.Authentication
     public class AppRole : IdentityRole
     {
         public DateTime CreateDate { get; set; } = DateTime.Now;
-        public IList<AppUser>? Users { get; set; }
+       
     }
 }

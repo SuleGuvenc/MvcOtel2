@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Hotel.MVC.Areas.AdminArea.Models.DTOs;
 using Hotel.MVC.DTO;
 using Hotel.MVC.DTO.Booking;
 using Otel.Entitiy.Concrete;
@@ -17,6 +18,8 @@ namespace Hotel.MVC.AutoMapper
             CreateMap<RegisterDTO, AppUser>();
 
             CreateMap<BookingCreateDTO, Booking>();
+            CreateMap<HotelCreateDTO, Otel.Entitiy.Concrete.Hotel>();
+
         }
     }
 }

@@ -44,7 +44,8 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
+              @await Component.InvokeAsync("Menu")
+            @* <li class="nav-item">
               <a asp-action="index" asp-controller="home" asp-area="AdminArea" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Home</p>
@@ -61,7 +62,7 @@
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v3</p>
               </a>
-            </li>
+            </li> *@
           </ul>
         </li>        
       </ul>

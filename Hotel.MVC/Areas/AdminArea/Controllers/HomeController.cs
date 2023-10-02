@@ -7,7 +7,7 @@ using Otel.Entitiy.Concrete;
 namespace Hotel.MVC.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Admin,User")]
     public class HomeController : Controller
     {
         private readonly IBookingManager bookingManager;

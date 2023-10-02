@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\AdminArea\Data\**" />
+    <Content Remove="Areas\AdminArea\Data\**" />
+    <EmbeddedResource Remove="Areas\AdminArea\Data\**" />
+    <None Remove="Areas\AdminArea\Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\lib\counterup\counterup.min.js" />
     <None Include="wwwroot\lib\easing\easing.js" />
     <None Include="wwwroot\lib\easing\easing.min.js" />
@@ -131,8 +138,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\AdminArea\Data\" />
-    <Folder Include="Areas\AdminArea\Models\" />
     <Folder Include="Areas\MembersArea\Models\" />
     <Folder Include="Views\Room\Shared\" />
     <Folder Include="wwwroot\NewFolder\" />

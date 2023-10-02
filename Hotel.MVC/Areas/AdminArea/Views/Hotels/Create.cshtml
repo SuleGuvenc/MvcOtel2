@@ -1,4 +1,5 @@
-﻿@model Otel.Entitiy.Concrete.Hotel
+﻿@using Hotel.MVC.Areas.AdminArea.Models.DTOs;
+@model HotelCreateDTO
 
 @{
     ViewData["Title"] = "Create";
@@ -57,3 +58,5 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
